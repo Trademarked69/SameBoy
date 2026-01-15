@@ -174,7 +174,7 @@ RGBGFX  := $(RGBDS)rgbgfx
 # RGBASM 0.7+ deprecate and remove `-h`
 RGBASM_FLAGS := $(if $(filter $(shell echo 'println __RGBDS_MAJOR__ || (!__RGBDS_MAJOR__ && __RGBDS_MINOR__ > 6)' | $(RGBASM) -), $$0), -h,) --include $(OBJ)/BootROMs/ --include BootROMs/
 # RGBGFX 0.6+ replace `-h` with `-Z`, and need `-c embedded`
-RGBGFX_FLAGS := $(if $(filter $(shell echo 'println __RGBDS_MAJOR__ || (!__RGBDS_MAJOR__ && __RGBDS_MINOR__ > 5)' | $(RGBASM) -), $$0), -h -u, -Z -u -c embedded)
+RGBGFX_FLAGS := $(if $(filter $(shell echo 'println __RGBDS_MAJOR__ || (!__RGBDS_MAJOR__ && __RGBDS_MINOR__ > 5)' | $(RGBASM) -), $$0), -h -u, -Z )
 
 
 # Set compilation and linkage flags based on target, platform and configuration
